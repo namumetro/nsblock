@@ -663,5 +663,6 @@ addBlock('b_alert','%1 alert창에 띄우기',{
   color:'#92dd55',
   outerLine:'#92d050'
 },{
-
+  params:[{
+	
 	
