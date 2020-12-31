@@ -639,7 +639,7 @@ $(`#entryCategory${category}`)[0].innerText = options.name
 }
 
 }
-addBlock('console_log','%1 콘솔창이 띄우기',{
+addBlock('console_log','%1 콘솔창에 띄우기',{
 color:'#92dd55',
 outerLine:'#92d050'
 },{
@@ -655,4 +655,10 @@ map:{
 CONTENT:0
 }
 },'msg',(sprite,script)=>{
-console.log(script.getValue('CONTENT',script)
+console.log(script.getValue('CONTENT',script))
+return script.callReturn()
+})
+//////////
+addBlock('b_alert','%1 alert창에 띄우기',{
+  color:'#92dd55',
+  outerLine:'#92d050'
