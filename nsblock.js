@@ -676,8 +676,8 @@ template: template
 
 }
 
-function addText('con'){
-	('console_log','%1 콘솔창에 띄우기')
+function addText('txt','con'){
+	(txt,'%1')
 
 
 
