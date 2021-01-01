@@ -675,5 +675,9 @@ template: template
 }
 
 }
-//////////////////블럭 만들기 시작
-addBlock('console_log','%1 콘솔창에 띄우기')
+
+function addText('con'){
+	('console_log','%1 콘솔창에 띄우기')
+
+
+
