@@ -1,4 +1,4 @@
-/*NS블록은 또라티카(thoratica)님의 스페셜블럭을 참고해 만들었습니다.
+/*NS블록은 기타블럭과 스페셜블럭을 참고해 만들었습니다.
 왠진 모르겠지만 복붙할때 공백이 생겨서 죄송합니다.*/
 Entry.staticBlocks = [
 
@@ -675,9 +675,46 @@ template: template
 }
 
 }
+const addText = (blockname, text) => {
 
-function addText('txt','con'){
-	(txt,'%1')
+Entry.block[blockname] = {
+template:'%1',skeleton:'basic_text',
+	
+	
+color: {
+default:EntryStatic.colorSet.common.TRANSPARENT,
+	
+darken: EntryStatic.colorSet.common.TRANSPARENT
+}
+	
+
+statement: [],
+
+params: [],
+	
+
+events: {},
+
+def: {
+
+params: params.def,
+
+type: blockname
+
+},
+
+paramsKeyMap: params.map,
+
+class: _class ? _class : 'default',
+
+func: func,
+
+template: template
+
+}
+
+}
+	
 
 
 
