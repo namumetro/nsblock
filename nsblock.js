@@ -361,3 +361,32 @@ template: '%1'
 ///////////////////////////////////////////////////블럭 만들기 시작
 addText('msg','메시지')
 ///////////////////////////////////////////////////
+
+Entry.staticBlocks.push({
+category: 'API', blocks: [
+'msg'
+]
+});
+
+
+updateCategory('API')
+
+$('head').append(`
+<style>
+#entryCategoryAPI {
+background-image: url(/lib/entry-js/images/hardware.svg);
+background-repeat: no-repeat;
+border-bottom-right-radius: 6px;
+border-bottom-left-radius: 6px;
+margin-bottom: 1px;
+}
+.entrySelectedCategory#entryCategoryAPI {
+background-image: url(/lib/entry-js/images/hardware_on.svg);
+background-color: #000;
+border-color: #000;
+color: #ffff;
+}
+</style>
+`)
+
+$('#entryCategoryAPI').append('스폐셜'), alert("현재스페셜블럭은1.6입니다~(알림)"),console.log("스페셜블럭 작동이 시작되었습니다."),document.title = "Special_Block_entry";
