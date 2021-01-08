@@ -322,7 +322,7 @@ $(`#entryCategory${category}`)[0].innerText = options.name
 const addBlock = (blockname, template, color, params, _class, func, skeleton = 'basic') => {
 Entry.block[blockname] = {
 color: color.color,
-outerLine: color.outerline,
+outerLine: color.outerLine,
 skeleton: skeleton,
 statement: [],
 params: params.params,
@@ -360,11 +360,31 @@ template: '%1'
 }
 ///////////////////////////////////////////////////블럭 만들기 시작
 addText('msg','메시지')
+addBlock('cs_log','%1콘솔창에 띄우기',{
+	color:'#92DD55',
+	outerLine:'#92D050'
+},{
+	params:[{
+		type:'Block',
+		accept:'string'
+	}],
+	def:[{
+		type:'text',
+		params:['Hello, World!']
+	}],
+	map:{
+		CONTENT:0
+	}
+},'text',(sprite,script)=>{
+	console.log(script.getValue('CONTENT',script))
+	script.callReturn()
+})
 ///////////////////////////////////////////////////
 
 Entry.staticBlocks.push({
 category: 'API', blocks: [
-'msg'
+	'msg',
+	'cs_log'
 ]
 });
 
