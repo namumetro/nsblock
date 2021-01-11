@@ -337,29 +337,7 @@ func: func,
 template: template
 }
 }
-const addText = (blockname, text) => {
-Entry.block[blockname] = {
-color: {
-	default: EntryStatic.colorSet.common.TRANSPARENT,
-	darken: EntryStatic.colorSet.common.TRANSPARENT
-},
-skeleton: 'basic_text',
-statement: [],
-params: [{
-	type: 'Text',
-	text: text,
-	color: EntryStatic.colorSet.common.TEXT,
-	align: 'center'
-}],
-events: {},
-def: {},
-paramsKeyMap: {},
-class: 'text',
-template: '%1'
-}
-}
 ///////////////////////////////////////////////////블럭 만들기 시작
-addText('cs','콘솔')
 addBlock('cs_log','%1콘솔창에 띄우기',{
 	color:'#92DD55',
 	outerLine:'#92D050'
@@ -380,11 +358,22 @@ addBlock('cs_log','%1콘솔창에 띄우기',{
 	script.callReturn()
 })
 ///////////////////////////////////////////////////
-
+addBlock('cs_clear','콘솔 지우기',{
+	color:'#92DD55',
+	outerLine:'#92D050'
+},{
+	params:[],
+	def:[],
+	map:{}
+},'text',(sprite,script)=>{
+	console.clear()
+	script.callReturn()
+})
+///////////////////////////////////////////////////
 Entry.staticBlocks.push({
 category: 'API', blocks: [
-	'cs',
-	'cs_log'
+	'cs_log',
+	'cs_clear'
 ]
 });
 
