@@ -359,7 +359,7 @@ template: '%1'
 }
 }
 ///////////////////////////////////////////////////블럭 만들기 시작
-addText('msg','메시지')
+addText('cs','콘솔')
 addBlock('cs_log','%1콘솔창에 띄우기',{
 	color:'#92DD55',
 	outerLine:'#92D050'
@@ -383,7 +383,7 @@ addBlock('cs_log','%1콘솔창에 띄우기',{
 
 Entry.staticBlocks.push({
 category: 'API', blocks: [
-	'msg',
+	'cs',
 	'cs_log'
 ]
 });
