@@ -353,7 +353,7 @@ addBlock('cs_log','%1콘솔창에 띄우기',{
 	map:{
 		CONTENT:0
 	}
-},'text',(sprite,script)=>{
+},'cs',(sprite,script)=>{
 	console.log(script.getValue('CONTENT',script))
 	script.callReturn()
 })
@@ -365,15 +365,35 @@ addBlock('cs_clear','콘솔 지우기',{
 	params:[],
 	def:[],
 	map:{}
-},'text',(sprite,script)=>{
+},'cs',(sprite,script)=>{
 	console.clear()
 	script.callReturn()
+})
+///////////////////////////////////////////////////
+addBlock('_alert','%1alert 창에 띄우기',{
+	color:'#92DD55',
+	outerLine:'#92D050'
+},{
+	params:[{
+		type:'Block',
+		accept:'string'
+	}],
+	def:[{
+		type:'text',
+		params:['Hello, World!']
+	}],
+	map:{
+		CONTENT:0
+	}
+},'cs',(sprite,script)=>{
+	alert(script.getValue('CONTENT',script))
 })
 ///////////////////////////////////////////////////
 Entry.staticBlocks.push({
 category: 'API', blocks: [
 	'cs_log',
-	'cs_clear'
+	'cs_clear',
+	'_alert'
 ]
 });
 
