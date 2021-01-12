@@ -389,7 +389,7 @@ addBlock('_alert','%1alert 창에 띄우기',{
 	alert(script.getValue('CONTENT',script))
 })
 ///////////////////////////////////////////////////
-addBlock('_prompt','%1a프롬프트 창에 띄우고 창에 입력한 값',{
+addBlock('_prompt','%1프롬프트 창에 띄우고 창에 입력한 값',{
 	color:'#92DD55',
 	outerLine:'#92D050'
 },{
@@ -406,7 +406,7 @@ addBlock('_prompt','%1a프롬프트 창에 띄우고 창에 입력한 값',{
 	}
 },'pu',(sprite,script)=>{
 	return prompt(script.getValue('CONTENT',script))
-})
+},'basic_string_field')
 ///////////////////////////////////////////////////
 Entry.staticBlocks.push({
 category: 'API', blocks: [
