@@ -385,15 +385,35 @@ addBlock('_alert','%1alert 창에 띄우기',{
 	map:{
 		CONTENT:0
 	}
-},'cs',(sprite,script)=>{
+},'pu',(sprite,script)=>{
 	alert(script.getValue('CONTENT',script))
+})
+///////////////////////////////////////////////////
+addBlock('_prompt','%1a프롬프트 창에 띄우고 창에 입력한 값',{
+	color:'#92DD55',
+	outerLine:'#92D050'
+},{
+	params:[{
+		type:'Block',
+		accept:'string'
+	}],
+	def:[{
+		type:'text',
+		params:['Hello, World!']
+	}],
+	map:{
+		CONTENT:0
+	}
+},'pu',(sprite,script)=>{
+	return prompt(script.getValue('CONTENT',script))
 })
 ///////////////////////////////////////////////////
 Entry.staticBlocks.push({
 category: 'API', blocks: [
 	'cs_log',
 	'cs_clear',
-	'_alert'
+	'_alert',
+	'_prompt'
 ]
 });
 
