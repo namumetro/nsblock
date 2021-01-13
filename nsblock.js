@@ -389,6 +389,25 @@ addBlock('_alert','%1alert 창에 띄우기',{
 	alert(script.getValue('CONTENT',script))
 })
 ///////////////////////////////////////////////////
+addBlock('_confirm','%1내용의 confirm 창에 확인을 눌렀는가?',{
+	color:'#92DD55',
+	outerLine:'#92D050'
+},{
+	params:[{
+		type:'Block',
+		accept:'string'
+	}],
+	def:[{
+		type:'text',
+		params:['Hello, World!']
+	}],
+	map:{
+		CONTENT:0
+	}
+},'pu',(sprite,script)=>{
+	return confirm(script.getValue('CONTENT',script))
+},'basic_boolean_field')
+///////////////////////////////////////////////////
 addBlock('_prompt','%1프롬프트 창에 띄우고 창에 입력한 값',{
 	color:'#92DD55',
 	outerLine:'#92D050'
@@ -413,6 +432,7 @@ category: 'API', blocks: [
 	'cs_log',
 	'cs_clear',
 	'_alert',
+	'_confirm',
 	'_prompt'
 ]
 });
